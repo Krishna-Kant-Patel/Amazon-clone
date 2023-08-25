@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Home from './component/Home';
+import Navbar from './component/NavBar/Navbar';
+import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div className="app">
+      <Navbar/>
+      
+      <Routes>
+        <Route path='' element={<h1>Amazon</h1>} />
+        <Route path='/home' element={<Home/>}/>
+
+      </Routes>
     </div>
+    
   );
 }
 
 export default App;
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDV81Cfp2-YZoonMFsDv2T4m4GhoCzLwTk",
+//   authDomain: "clone-ced88.firebaseapp.com",
+//   projectId: "clone-ced88",
+//   storageBucket: "clone-ced88.appspot.com",
+//   messagingSenderId: "592489253317",
+//   appId: "1:592489253317:web:8122ecb9006fe1fb5163ac",
+//   measurementId: "G-1WSLN58Z41"
+// };
