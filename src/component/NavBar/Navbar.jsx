@@ -1,9 +1,12 @@
 import React from 'react';
 import './style.css';
 import { Link } from 'react-router-dom';
+import { useStateValue } from '../ContextApi/ContextApi';
 
 
 function Navbar() {
+  const[{cart}, dispatch] = useStateValue();
+  
   return (
     <>
       <nav className='navbar' >
@@ -34,10 +37,10 @@ function Navbar() {
             <span className='line2'>Prime</span>
 
           </div> </Link>
-          <Link className='menuLink'> <div className="Cart">
+          <Link className='menuLink' to="/cart"> <div className="Cart">
             <img className='cartIcon' src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-royal-brites-poster-foam-board-photo-paper-royal-lace-19.png" alt="" />
 
-            <p className='cartCount'>0</p>
+            <p className='cartCount'>{cart?.length}</p>
 
           </div> </Link>
         </div>

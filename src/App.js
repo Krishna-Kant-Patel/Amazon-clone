@@ -2,6 +2,7 @@
 import './App.css';
 import Home from './component/Home/Home';
 import Navbar from './component/NavBar/Navbar';
+import Cart from './component/Cart/Cart';
 import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path='/home' element={<h1>krishna</h1>}/>
+        <Route path='/cart' element={<Cart/>}/>
 
       </Routes>
     </>

@@ -4,11 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { CustomProvider } from './component/ContextApi/ContextApi';
+import reducer, { initiaState } from './component/Reducer/Reducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter><App /></BrowserRouter>
+    <BrowserRouter>
+    <CustomProvider initiaState={initiaState} reducer={reducer}>
+    <App />
+    </CustomProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
