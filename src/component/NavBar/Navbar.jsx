@@ -5,13 +5,19 @@ import { useStateValue } from '../ContextApi/ContextApi';
 
 
 function Navbar() {
-  const[{cart}, dispatch] = useStateValue();
+  const[{cart,login,user}, dispatch] = useStateValue();
+
+  const signOut =()=>{
+    dispatch({
+      type:"Auth"
+    })
+  }
   
   return (
     <>
       <nav className='navbar' >
         <div className="logoContainer">
-        <Link to='' >
+        <Link to='/' >
           <img src="https://www.freepnglogos.com/uploads/amazon-png-logo-vector/amazon-symbol-png-logo-vector-9.png" alt="" className="logo" />
         </Link>
         </div>
@@ -20,10 +26,10 @@ function Navbar() {
           <button className='searchButton'><img className='searchLogo' src="https://www.freepnglogos.com/uploads/search-png/search-icon-transparent-images-vector-23.png" alt="" /></button>
         </div>
         <div className="menu">
-          <Link className='menuLink' to='/home'> 
-          <div className="subMenu">
-            <span className='line1' >Krishna</span>
-            <span className='line2' >Signin</span>
+          <Link className='menuLink' to='/'> 
+          <div className="subMenu" onClick={signOut}>
+            <span className='line1' >{user.name}</span>
+            <span className='line2' >SignOut</span>
 
           </div> 
           </Link>

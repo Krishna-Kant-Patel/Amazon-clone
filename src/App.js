@@ -3,16 +3,26 @@ import './App.css';
 import Home from './component/Home/Home';
 import Navbar from './component/NavBar/Navbar';
 import Cart from './component/Cart/Cart';
+import LoginPage from './component/Login/Login';
+import Signup from './component/Login/Signup';
 import { Routes, Route } from 'react-router-dom';
+import { useStateValue } from './component/ContextApi/ContextApi';
 function App() {
+
+  const [{login}, dispatch] = useStateValue()
   return (
     
     <>
-      <Navbar/> 
+      
       
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/cart' element={<Cart/>}/>
+        {/* <Route path='/' element={} /> */}
+        <Route path='/signup' element={<Signup/>} />
+        <Route path='/' element={<>{login?(<><Navbar/>
+        <Home/></>):(<><LoginPage/></>)}</>}  />
+          
+        
+        <Route path='/cart' element={<><Navbar/><Cart/></>}/>
 
       </Routes>
     </>

@@ -1,6 +1,49 @@
-
-.Add{
+.ProductBox{
+    padding-top: 10px ;
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+.cartItems{
     margin-top: 60px;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.subTotal{
+    margin-left: 5px;
+    margin-top: 60px;
+    height: 200px;
+    width: 30%;
+    border: 1px solid #dddddd;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border-radius: 3px;
+    justify-content: space-around;
+
+}
+.subTotal > button{
+    background-color: #f0c14b;
+    border-radius: 2px;
+    width: 100%;
+    height: 30px;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+
+}
+.subGift{
+    display: flex;
+    align-items: center;
+}
+.subGift > input{
+    margin: 5px;
+}
+.Add{
+    
     width: 100%;
 }
 .cartContainer{

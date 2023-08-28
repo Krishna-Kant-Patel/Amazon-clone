@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import { useStateValue } from '../ContextApi/ContextApi';
+import SubTotal from './SubTotal';
 
 function Cart() {
     const [{ cart }, dispatch] = useStateValue();
@@ -14,7 +15,9 @@ const removeItem =(id)=>{
 
     return (
         <>
-            <img src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg" alt="" className="Add" />
+            <div className="ProductBox">
+                <div className="cartItems">
+                <img src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg" alt="" className="Add" />
             {cart?.length === 0 ? (
                 <div>
                     <h1>Your Cart is empty</h1>
@@ -49,6 +52,12 @@ const removeItem =(id)=>{
                 </div>
             )
             }
+            </div>
+                {cart.length>0 &&
+                <SubTotal/>
+                }
+            </div>
+            
         </>
     )
 }

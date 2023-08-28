@@ -1,6 +1,8 @@
+export const getCartTotal =(cart)=> cart?.reduce((amount, item )=>item.price +amount, 0)
 export const initiaState = {
     cart:[],
-    user:""
+    user:[{name: 'krishna', email: 'dksflk@gmail.com', password: '1234'}],
+    login: false
 };
 
 function reducer(state, action){
@@ -17,6 +19,16 @@ function reducer(state, action){
             return {
                 ...state,
                 cart:[...state.cart.filter((ele)=>ele.id!==action.item)]
+            }
+        case "User":
+            return{
+                ...state,
+                user:[...state.user, action.item]
+            }
+        case "Auth":
+            return{
+                ...state,
+                login:!state.login
             }
             
     
