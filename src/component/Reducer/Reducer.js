@@ -2,11 +2,15 @@ export const getCartTotal =(cart)=> cart?.reduce((amount, item )=>item.price +am
 export const initiaState = {
     cart:[],
     user:[{name: 'krishna', email: 'dksflk@gmail.com', password: '1234'}],
-    login: false
+    login: false,
+    mens:null,
+    womens:null,
+    electronics:null,
+    jewelery:null
 };
 
 function reducer(state, action){
-    console.log(action.item);
+    // console.log(action.item);
     switch (action.type) {
         case "ADD":
             return {
@@ -29,6 +33,15 @@ function reducer(state, action){
             return{
                 ...state,
                 login:!state.login
+            }
+        case "category":
+            return{
+                ...state,
+                mens:action.item.filter((ele)=>ele.category==="men's clothing"),
+                womens:action.item.filter((ele)=>ele.category==="women's clothing"),
+                jewelery:action.item.filter((ele)=>ele.category==="jewelery"),
+                electronics:action.item.filter((ele)=>ele.category==="electronics")
+
             }
             
     

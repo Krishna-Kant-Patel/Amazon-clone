@@ -78,7 +78,7 @@ function Signup() {
             required
           />
         </div>
-        <Link ><button onClick={handleSubmit} className='signinbtn'>Sign In</button></Link>
+        <Link ><button onClick={handleSubmit} className='signinbtn'>Sign up</button></Link>
       </form>
       <p className='newuser' style={{textAlign:'center'}}><hr /><span>Already have an account ?</span><hr /></p>
       <Link to='/' ><button className="signup">Signin</button></Link>

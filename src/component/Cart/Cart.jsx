@@ -11,6 +11,7 @@ const removeItem =(id)=>{
         type:'Remove',
         item:id
     })
+    console.log(cart);
 }
 
     return (
@@ -39,7 +40,7 @@ const removeItem =(id)=>{
                                         {
                                             Array(ele.rating)
                                                 .fill()
-                                                .map((ele) => <p>🌟</p>)
+                                                .map((ele) => <p>⭐</p>)
                                         }
                                     </div>
                                     <button onClick={(()=> removeItem(ele.id) )}>Remove from cart</button>
