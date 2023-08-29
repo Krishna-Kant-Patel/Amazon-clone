@@ -1,0 +1,46 @@
+
+.mainBox{
+    padding-top: 90px;
+    padding-left: 35px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content:baseline;
+    
+}
+
+.Card{
+    max-height: 400px;
+    margin: 10px;
+    padding: 10px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly;
+    background-color: white;
+    
+}
+.heads{
+    height: 100%;
+    width: 60%;
+}
+.Price{
+    margin-top: 5px;
+}
+.ratings{
+    display: flex;
+}
+.Card > img{
+    height: 200px;
+    width:35%;
+}
+.btn{
+    background-color: #f0c14b;
+    border:  1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+
+
+}

@@ -5,12 +5,28 @@ import { useStateValue } from '../ContextApi/ContextApi';
 
 
 function Navbar() {
-  const[{cart,login,user}, dispatch] = useStateValue();
+  const[{cart,login,user, allProduct}, dispatch] = useStateValue();
 
   const signOut =()=>{
     dispatch({
       type:"Auth"
     })
+  }
+  const searchProduct = (e)=>{
+    const filteredData = allProduct.filter((task) =>
+    task.title.toLowerCase().includes(e.target.value.toLowerCase()));
+    console.log(filteredData);
+    if(filteredData.length>0){
+      dispatch({
+      type:"search",
+      item: filteredData 
+    })}
+    else{
+      dispatch({
+        type:"search",
+        item: null
+      })
+    }
   }
   
   return (
@@ -22,8 +38,8 @@ function Navbar() {
         </Link>
         </div>
         <div className="searchContainer">
-          <input type="text" placeholder='Search Product ' />
-          <button className='searchButton'><img className='searchLogo' src="https://www.freepnglogos.com/uploads/search-png/search-icon-transparent-images-vector-23.png" alt="" /></button>
+          <input type="text" placeholder='Search Product ' onChange={searchProduct} />
+          <Link to="/search" className='searchButton' ><img className='searchLogo' src="https://www.freepnglogos.com/uploads/search-png/search-icon-transparent-images-vector-23.png" alt="" /></Link>
         </div>
         <div className="menu">
           <Link className='menuLink' to='/'> 
