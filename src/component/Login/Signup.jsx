@@ -35,6 +35,7 @@ function Signup() {
     setEmail('')
     setPassword('')
     setName('')
+    alert("Sign-up successfully")
     
    }
    else{alert("Enter credentials")

@@ -40,7 +40,7 @@ function reducer(state, action){
                 mens:action.item.filter((ele)=>ele.category==="men's clothing"),
                 womens:action.item.filter((ele)=>ele.category==="women's clothing"),
                 jewelery:action.item.filter((ele)=>ele.category==="jewelery"),
-                electronics:action.item.filter((ele)=>ele.category==="electronics")
+                electronics:action.item.filter((ele)=>ele.category==="electronics" && ele.id!==14)
 
             }
             
