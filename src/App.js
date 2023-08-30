@@ -17,11 +17,9 @@ function App() {
       
       
       <Routes>
-        <Route path='/signup' element={<Signup/>} />
-        <Route path='/' element={<>{login?(<><Navbar/>
+      <Route exact path='/' element={<>{login?(<><Navbar/>
         <Home/></>):(<><LoginPage/></>)}</>}  />
-          
-        
+        <Route path='/signup' element={<Signup/>} />
         <Route path='/cart' element={<><Navbar/><Cart/></>}/>
         <Route path='/search' element={<><Navbar/><SearchProducts/></>}/>
 
