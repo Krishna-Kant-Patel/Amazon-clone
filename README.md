@@ -45,8 +45,10 @@ Navigate to the project directory:
 
 cd amazon-clone
 Install the project dependencies:
-
 npm install
+npm i react-router-dom 
+npm i react-currency-format
+
 
 Start the development server:
 
